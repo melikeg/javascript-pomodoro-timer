@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --pomodoro: #2B4865;
+    --short :#78b2a4;
+    --long:#256D85;
+    --white:#ece3e3;
+    --gray: #30383c;
+    --green: #66BFBF;
+}
+body {
+    background-color: var(--pomodoro);
+    transition: all 2s;
+}
+main {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-family: 'Rubik', sans-serif;
+}
+main .btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+main .btn-container button {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--white);
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    margin: 0px 5px;
+}
+main .btn-container button:hover {
+    border: 1px solid  var(--white);;
+    border-radius: 4px;
+}
+main .btn-container button.active {
+    border: 1px solid  var(--white);;
+    border-radius: 4px;
+}
+main .timer {
+    width: 50%;
+    height: 45%;
+    font-size: 200px;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .start-btn,
+main .stop-btn {
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    background-color:  var(--white);
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    transition: all 1s ease-in;
+}
+main .stop-btn {
+    display: none;
+}
+/* main .start-btn:hover {
+    background-color:  whitesmoke;
+} */
