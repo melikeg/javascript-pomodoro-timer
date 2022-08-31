@@ -7,6 +7,7 @@ const long = document.querySelector("#long");
 const pomodoro = document.querySelector("#pomodoro");
 const modeBtns = document.querySelector("#mode-btns");
 const allModes = document.querySelectorAll("button[data-mode]");
+const progressBarLine = document.querySelector(".bar-line");
 
 var workSound = new Audio("./sound/get-back-to-work.mp3");
 var breakSound = new Audio("./sound/get-some-break.mp3");
@@ -17,6 +18,13 @@ let mode = "pomodoro";
 let pomodoroCount = 1;
 let interval;
 let color = "#2B4865";
+let lineWidth = 0;
+
+let remainingTime = {
+  seconds: 0,
+  minutes: 0,
+  isFull: false,
+};
 
 function isDigit(n) {
   return n <= 9 ? "0" + n : n;
@@ -24,12 +32,21 @@ function isDigit(n) {
 const startTimer = () => {
   startBtn.style.display = "none";
   stopBtn.style.display = "block";
+  if (remainingTime.isFull) {
+    minutes = remainingTime.minutes;
+    seconds = remainingTime.seconds;
+  }
   timer(minutes, seconds, mode);
 };
 const stopTimer = () => {
+  clearInterval(interval);
+
+  remainingTime.minutes = minuteSpan.innerHTML.slice(-1);
+  remainingTime.seconds = secondSpan.innerHTML;
+  remainingTime.isFull = true;
+
   startBtn.style.display = "block";
   stopBtn.style.display = "none";
-  clearInterval(interval);
 };
 
 const timer = (minutes, seconds, mode) => {
@@ -39,6 +56,7 @@ const timer = (minutes, seconds, mode) => {
       minutes--;
     }
     seconds--;
+    showProgressBar(mode);
     minuteSpan.innerHTML = isDigit(minutes);
     secondSpan.innerHTML = isDigit(seconds);
 
@@ -72,9 +90,13 @@ const timer = (minutes, seconds, mode) => {
 modeBtns.addEventListener("click", (event) => {
   mode = event.target.dataset.mode;
   if (!mode) return;
-  changeMode(mode);
+  lineWidth = 0;
+  working = false;
 
   stopTimer();
+  remainingTime.isFull = false;
+
+  changeMode(mode);
 });
 
 function changeMode(mode) {
@@ -104,6 +126,27 @@ function changeMode(mode) {
   minuteSpan.innerHTML = isDigit(minutes);
   secondSpan.innerHTML = isDigit(seconds);
   document.body.style.backgroundColor = color;
-  console.log(mode);
+  // console.log(mode);
+
   timer(minutes, seconds, mode);
+  startBtn.style.display = "none";
+  stopBtn.style.display = "block";
+}
+// --pomodoro: #2B4865;
+// --short :#78b2a4;
+// --long:#256D85;
+
+function showProgressBar(mode) {
+  switch (mode) {
+    case "short":
+      lineWidth += 0.3333333333333333;
+      break;
+    case "long":
+      lineWidth += 0.1111111111111111;
+      break;
+    case "pomodoro":
+      lineWidth += 0.0666666666666667;
+      break;
+  }
+  progressBarLine.style.width = `${lineWidth}%`;
 }

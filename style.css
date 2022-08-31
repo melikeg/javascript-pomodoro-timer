@@ -5,8 +5,6 @@
 }
 :root {
     --pomodoro: #2B4865;
-    --short :#78b2a4;
-    --long:#256D85;
     --white:#ece3e3;
     --gray: #30383c;
     --green: #66BFBF;
@@ -24,6 +22,19 @@ main {
     align-items: center;
     margin: auto;
     font-family: 'Rubik', sans-serif;
+}
+main .progres-bar {
+    width: 100%;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.14);
+    position:absolute;
+    top: 0;
+}
+main .progres-bar .bar-line {
+    width: 0%;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: width 2s;
 }
 main .btn-container {
     width: 100%;
