@@ -1,89 +1,128 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 :root {
-    --pomodoro: #2B4865;
-    --white:#ece3e3;
-    --gray: #30383c;
-    --green: #66BFBF;
+  --pomodoro: #2b4865;
+  --white: #ece3e3;
+  --gray: #30383c;
+  --green: #66bfbf;
 }
 body {
-    background-color: var(--pomodoro);
-    transition: all 2s;
+  background-color: var(--pomodoro);
+  transition: all 2s;
 }
-main {
-    width: 80%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    font-family: 'Rubik', sans-serif;
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 30px;
+  cursor: pointer;
 }
-main .progres-bar {
-    width: 100%;
-    height: 15px;
-    background-color: rgba(255, 255, 255, 0.14);
-    position:absolute;
-    top: 0;
+header .fa-brands,
+header .fa-solid,
+.what-is-pomodoro .fa-solid  {
+  font-size: 30px;
+  color: #d2d2d2;
+  padding: 5px;
 }
-main .progres-bar .bar-line {
-    width: 0%;
-    height: 15px;
-    background-color: rgba(255, 255, 255, 0.5);
-    transition: width 2s;
+header #close {
+    visibility: hidden;
 }
-main .btn-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+header .fa-brands:hover, header .fa-solid:hover {
+    color: white;
 }
-main .btn-container button {
-    width: 150px;
-    height: 40px;
-    background-color: transparent;
-    border: none;
-    font-weight: 400;
-    font-size: 17px;
-    color: var(--white);
-    cursor: pointer;
-    font-family: 'Rubik', sans-serif;
-    margin: 0px 5px;
+.main {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-family: "Rubik", sans-serif;
 }
-main .btn-container button:hover {
-    border: 1px solid  var(--white);;
-    border-radius: 4px;
+.main .progres-bar {
+  width: 100%;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.14);
+  position: absolute;
+  top: 0;
 }
-main .btn-container button.active {
-    border: 1px solid  var(--white);;
-    border-radius: 4px;
+.main .progres-bar .bar-line {
+  width: 0%;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: width 2s;
 }
-main .timer {
-    width: 50%;
-    height: 45%;
-    font-size: 200px;
-    color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main .btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-main .start-btn,
-main .stop-btn {
-    width: 200px;
-    height: 50px;
-    border: none;
-    border-radius: 4px;
-    background-color:  var(--white);
-    font-size: 20px;
-    font-family: 'Rubik', sans-serif;
-    transition: all 1s ease-in;
+.main .btn-container button {
+  width: 150px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--white);
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  margin: 0px 5px;
 }
-main .stop-btn {
-    display: none;
+.main .btn-container button:hover {
+  border: 1px solid var(--white);
+  border-radius: 4px;
 }
-/* main .start-btn:hover {
+.main .btn-container button.active {
+  border: 1px solid var(--white);
+  border-radius: 4px;
+}
+.main .timer {
+  width: 50%;
+  height: 45%;
+  font-size: 200px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .start-btn,
+.main .stop-btn {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--white);
+  font-size: 20px;
+  font-family: "Rubik", sans-serif;
+  transition: all 1s ease-in;
+}
+.main .stop-btn {
+  display: none;
+}
+/* .main .start-btn:hover {
     background-color:  whitesmoke;
 } */
+
+.what-is-pomodoro {
+    background-color: #ffffff66;
+    color: white;
+    border-radius: 10px;
+    width: 500px;
+    height: 450px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    padding: 30px;
+    display: none;
+    position: relative;
+    margin: auto;
+    top: 200px;
+  }
+  .what-is-pomodoro > ul > li{
+    list-style-type: none;
+    margin: 20px 0px;
+  }

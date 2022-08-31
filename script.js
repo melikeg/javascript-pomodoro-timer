@@ -62,6 +62,7 @@ const timer = (minutes, seconds, mode) => {
 
     if (minutes == 0 && seconds == 0) {
       clearInterval(interval);
+      lineWidth = 0;
 
       switch (mode) {
         case "pomodoro":
@@ -150,3 +151,18 @@ function showProgressBar(mode) {
   }
   progressBarLine.style.width = `${lineWidth}%`;
 }
+
+const questionBtn = document.querySelector("#question");
+const closeBtn = document.querySelector("#close");
+const mainPart = document.querySelector(".main");
+const whatIsPomodoro = document.querySelector(".what-is-pomodoro");
+
+questionBtn.addEventListener("click", () => {
+  mainPart.style.display = "none";
+  closeBtn.style.visibility = "visible";
+  whatIsPomodoro.style.display = "block";
+  questionBtn.style.display = "none";
+});
+closeBtn.addEventListener("click", () => {
+  location.reload();
+});

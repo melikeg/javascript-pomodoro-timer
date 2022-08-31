@@ -10,12 +10,25 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>Pomodoro Tecnique</title>
   </head>
   <body>
-    <main>
+    <header>
+      <i class="fa-solid fa-circle-xmark" id="close"></i>
+      <i class="fa-solid fa-circle-question" id="question"></i>
+      <a href="https://github.com/melikeg"
+        ><i class="fa-brands fa-github"></i
+      ></a>
+      <a href="https://www.linkedin.com/in/melike-gorgulu/"
+        ><i class="fa-brands fa-linkedin"></i
+      ></a>
+    </header>
+    <main class="main">
       <div class="progres-bar"><div class="bar-line"></div></div>
       <div class="btn-container" id="mode-btns">
         <button class="active" id="pomodoro" data-mode="pomodoro">
@@ -30,6 +43,27 @@
       <button class="start-btn" onclick="startTimer()">Start</button>
       <button class="stop-btn" onclick="stopTimer()">Stop</button>
     </main>
+    <div class="what-is-pomodoro">
+      <ul>
+        <h3>What is Pomodoro Technique?</h3>
+        <li>
+          <span>STEP 1 <i class="fa-solid fa-book"></i></span
+          ><span>Pick a task</span>
+        </li>
+        <li>
+          STEP 2 <i class="fa-solid fa-hourglass-end"></i> Set a 25-minute timer
+        </li>
+        <li>
+          STEP 3 <i class="fa-solid fa-laptop-file"></i>Work on tour task full
+          concentration and until the time is up
+        </li>
+        <li>STEP 4 <i class="fa-solid fa-clock"></i>Take a 5 minute break</li>
+        <li>
+          STEP 5 <i class="fa-solid fa-stopwatch-20"></i> Every 4 pomodoros,
+          take a longer 15 - 20 minute break
+        </li>
+      </ul>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
