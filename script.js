@@ -97,6 +97,7 @@ modeBtns.addEventListener("click", (event) => {
   stopTimer();
   remainingTime.isFull = false;
 
+  mode == "pomodoro" ? workSound.play() : breakSound.play();
   changeMode(mode);
 });
 
