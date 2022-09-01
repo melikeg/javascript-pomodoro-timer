@@ -41,7 +41,9 @@ const startTimer = () => {
 const stopTimer = () => {
   clearInterval(interval);
 
-  remainingTime.minutes = minuteSpan.innerHTML.slice(-1);
+  minuteSpan.innerHTML.startsWith("0")
+    ? (remainingTime.minutes = minuteSpan.innerHTML.slice(-1))
+    : (remainingTime.minutes = minuteSpan.innerHTML.slice(-2));
   remainingTime.seconds = secondSpan.innerHTML;
   remainingTime.isFull = true;
 
