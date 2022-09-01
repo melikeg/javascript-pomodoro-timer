@@ -20,12 +20,11 @@ header {
   margin: 30px;
   cursor: pointer;
 }
-header .fa-brands,
-header .fa-solid,
-.what-is-pomodoro .fa-solid  {
+header .fa-brands,header .fa-solid,.what-is-pomodoro .fa-solid  {
   font-size: 30px;
   color: #d2d2d2;
   padding: 5px;
+  transition: all 0.2s ease-in;
 }
 header #close {
     visibility: hidden;
@@ -90,8 +89,7 @@ header .fa-brands:hover, header .fa-solid:hover {
   justify-content: center;
   align-items: center;
 }
-.main .start-btn,
-.main .stop-btn {
+.main .start-btn, .main .stop-btn {
   width: 200px;
   height: 50px;
   border: none;
@@ -99,30 +97,41 @@ header .fa-brands:hover, header .fa-solid:hover {
   background-color: var(--white);
   font-size: 20px;
   font-family: "Rubik", sans-serif;
-  transition: all 1s ease-in;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
 }
 .main .stop-btn {
   display: none;
 }
-/* .main .start-btn:hover {
-    background-color:  whitesmoke;
-} */
-
+.main .start-btn:hover, .main .stop-btn:hover{
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.75);
+}
 .what-is-pomodoro {
-    background-color: #ffffff66;
-    color: white;
-    border-radius: 10px;
-    width: 500px;
-    height: 450px;
-    font-size: 20px;
-    font-family: 'Rubik', sans-serif;
-    padding: 30px;
-    display: none;
-    position: relative;
-    margin: auto;
-    top: 200px;
+  background-color: #ffffff66;
+  color: white;
+  border-radius: 10px;
+  width: 500px;
+  height: 450px;
+  font-size: 20px;
+  font-family: 'Rubik', sans-serif;
+  padding: 30px;
+  display: none;
+  position: relative;
+  margin: auto;
+  top: 200px;
+}
+.what-is-pomodoro > ul > li{
+  list-style-type: none;
+  margin: 20px 0px;
+}
+@media (max-width:600px) {
+  .main .timer {
+    font-size: 150px;
   }
-  .what-is-pomodoro > ul > li{
-    list-style-type: none;
-    margin: 20px 0px;
+}
+@media (max-width:430px) {
+  .main .timer {
+    font-size: 100px;
   }
+}
